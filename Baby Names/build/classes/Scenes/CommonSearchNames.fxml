@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="865.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f7ffbb" height="839.0" layoutX="478.0" stroke="#b19cd9" strokeType="INSIDE" strokeWidth="0.0" width="155.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#baf0f5" height="839.0" layoutX="239.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="241.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c7bae2" height="839.0" stroke="#b19cd9" strokeType="INSIDE" strokeWidth="0.0" width="241.0" />
+            <TableView fx:id="commonSearchTable" layoutX="22.0" layoutY="108.0" prefHeight="200.0" prefWidth="591.0">
+              <columns>
+                <TableColumn fx:id="commonRank" prefWidth="108.79999160766602" text="Rank" />
+                  <TableColumn fx:id="commonSearch" prefWidth="127.19999694824219" text="Searches" />
+                <TableColumn fx:id="commonName" prefWidth="354.4000122070313" text="Name" />
+              </columns>
+            </TableView>
+            <Label layoutX="126.0" layoutY="14.0" text="Most Commonly Searched Names">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="backButton" layoutX="556.0" layoutY="793.0" mnemonicParsing="false" onMouseClicked="#backButton" text="Back" />
+            <Label fx:id="instructions" alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="67.0" prefHeight="18.0" prefWidth="591.0" />
+            <BarChart fx:id="mostPopularBarGraph" layoutX="-12.0" layoutY="318.0" legendVisible="false" prefHeight="473.0" prefWidth="634.0" title="Most Popular Out of Total Searches">
+              <xAxis>
+                <CategoryAxis label="Names" side="BOTTOM" fx:id="xAxis" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" label="Count" side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
